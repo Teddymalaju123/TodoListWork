@@ -15,9 +15,15 @@ const Todo = ({ todo, onUpdate, todos, setTodos }) => {
   };
 
   const handleRemoveClick = () => {
-    const updatedTodos = todos.filter((item) => item.id !== todo.id);
-    setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    const isConfirmed = window.confirm("ต้องการจะลบรายการนี้ใช่หรือไม่");
+    if (isConfirmed) {
+      const updatedTodos = todos.filter((item) => item.id !== todo.id);
+      setTodos(updatedTodos);
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      alert("ลบรายการเสร็จสิ้น");
+    } else {
+      alert("ยกเลิกการลบรายการ");
+    }
   };
 
   const formateDate = (timestamp) => {
