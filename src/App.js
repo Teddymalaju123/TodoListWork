@@ -9,6 +9,8 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [isShowingTodoList, setIsShowingTodoList] = useState(true);
+  const [isTodoListSelected, setIsTodoListSelected] = useState(false);
+  const [isTodoSelected, setIsTodoSelected] = useState(false);
 
   useEffect(() => {
     const storedTodosJSON = localStorage.getItem("todos");
@@ -48,10 +50,14 @@ function App() {
   };
 
   const handleShowTodoList = () => {
+    setIsTodoListSelected(true);
+    setIsTodoSelected(false);
     setIsShowingTodoList(true);
   };
 
   const handleShowTodo = () => {
+    setIsTodoListSelected(false);
+    setIsTodoSelected(true);
     setIsShowingTodoList(false);
   };
 
@@ -64,8 +70,18 @@ function App() {
               <header className="App-header flex justify-between mt-2 mb-2 font-serif">
                 Todo List
                 <div className="flex justify-end border-2 border-black ">
-                  <CiViewList className="size-6" onClick={handleShowTodoList} />
-                  <IoGrid className="size-6" onClick={handleShowTodo} />
+                  <CiViewList
+                    className={`size-6 ${
+                      isTodoListSelected ? "hover:bg-amber-300" : ""
+                    }`}
+                    onClick={handleShowTodoList}
+                  />
+                  <IoGrid
+                    className={`size-6 ${
+                      isTodoSelected ? "hover:bg-amber-300" : ""
+                    }`}
+                    onClick={handleShowTodo}
+                  />
                 </div>
               </header>
             </div>
