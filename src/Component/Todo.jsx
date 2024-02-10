@@ -32,7 +32,7 @@ const TodoList = ({ todo, onUpdate, todos, setTodos }) => {
     const month = (date.getMonth() + 1).toString();
     const day = date.getDate().toString();
     const hours = date.getHours().toString();
-    const minutes = date.getMinutes().toString();
+    const minutes = date.getMinutes().toString().padStart(2, "0");
 
     return `${year}/${month}/${day} ${hours}:${minutes}`;
   };
