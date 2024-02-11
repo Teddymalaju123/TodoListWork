@@ -1,0 +1,33 @@
+--- detail ---
+
+เมื่อ clone git แล้วกรุณาทำตามขั้นตอนดังนี้
+1. npm install เพื่อลง node_modules
+2. npm start เพื่อรัน project
+
+
+โดย prohect นี้จะใช้เป็น reactJSและเก็บข้อมูลด้วย LocalStorage
+Component ที่ได้ทำการสร้าง
+--Todolist คือรายการข้อมูลแบบ grid
+--Todo คือรายการข้อมูล
+-- ButtonAdd คือปุ่มสำหรับเพิ่มรายการ
+    
+create To-do component:
+•	checkbox for to-do
+•	show the to-do text that user submitted
+•	show the updatedAt timestamp
+•	show Remove to-do button
+
+handle actions using state from React in the web app:
+•	add a to-do (fill in the input and submit with clicking Add button)
+•	checkbox for complete a to-do (can toggle from checked to unchecked)
+•	remove a to-do
+
+sorting to-dos:
+•	recently added to-do shows on the top of the stack
+•	completed to-do goes to the bottom of the stack (oldest is in the end of the stack)
+
+สิ่งที่ทำเพิ่ม BonusPoint:
+•	toggle view mode between stack view and grid view
+•	confirmation dialog before you delete to-do
+•	responsive style for mobile view
+•	store in database (LocalStorage)
